@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  class-registration:
+    build: .
+    ports:
+      - "8080:8080"
+
+  mysql:
+    image: mysql:8.0.29
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: fake-pass
+      MYSQL_DATABASE: class-registration

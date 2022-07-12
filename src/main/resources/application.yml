@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/class-registration
+    username: root
+    password: fake-pass
+  application:
+    name: class-registration
+  liquibase:
+    enabled: false
