@@ -1,15 +1,19 @@
 package camaral.github.io.classregistration.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Set;
 
 @Entity
 @Table(name = "courses")
 public class CourseEntity {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @NotNull
+    @Size(min = 1, max = 100)
     private String name;
 
     @ManyToMany(mappedBy = "courses")
