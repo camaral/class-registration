@@ -16,6 +16,7 @@ public class StudentEntity {
     @Size(min = 1, max = 100)
     private String name;
 
+    @Size(max = 5)
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(
             name = "students_courses",

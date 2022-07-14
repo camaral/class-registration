@@ -1,5 +1,6 @@
 package camaral.github.io.classregistration.rest;
 
+import org.springframework.data.rest.core.RepositoryConstraintViolationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +25,22 @@ public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler 
                 .map(validation -> new FieldConstraintValidationError(
                         validation.getPropertyPath().toString(),
                         validation.getMessage()))
+                .toList();
+
+        return this.handleExceptionInternal(ex, new ConstraintValidationErrorResponse(errors),
+                new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
+    }
+
+    @ExceptionHandler(RepositoryConstraintViolationException.class)
+    public ResponseEntity<Object> handleRepositoryConstraintViolationException(
+            RepositoryConstraintViolationException ex,
+            WebRequest request
+    ) {
+        List<FieldConstraintValidationError> errors = ex.getErrors().getAllErrors()
+                .stream()
+                .map(objectError -> new FieldConstraintValidationError(
+                        objectError.getObjectName(),
+                        objectError.getDefaultMessage()))
                 .toList();
 
         return this.handleExceptionInternal(ex, new ConstraintValidationErrorResponse(errors),
