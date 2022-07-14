@@ -1,0 +1,10 @@
+# curl -i -X PUT -d "{\"name\":\"A Name\"}" -H "Content-Type:application/json" http://localhost:8080/courses/1
+PUT http://localhost:8080/courses/1
+Content-Type: application/json
+
+{
+  "name": "A Name"
+}
+
+###
+

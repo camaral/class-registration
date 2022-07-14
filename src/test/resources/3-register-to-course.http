@@ -1,0 +1,7 @@
+# curl -i -X PUT -H "Content-Type:text/uri-list"
+#-d "http://localhost:8080/courses/1" http://localhost:8080/students/1/courses
+PUT http://localhost:8080/students/3/courses
+Content-Type: text/uri-list
+
+http://localhost:8080/courses/1
+http://localhost:8080/courses/2

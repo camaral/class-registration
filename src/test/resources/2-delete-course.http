@@ -1,0 +1,2 @@
+# curl -i -X DELETE http://localhost:8080/courses/1
+DELETE http://localhost:8080/courses/1

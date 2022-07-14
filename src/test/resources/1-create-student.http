@@ -1,0 +1,7 @@
+# curl -i -X POST -d "{\"name\":\"A Name\"}" -H "Content-Type:application/json" http://localhost:8080/students/
+POST http://localhost:8080/students/
+Content-Type: application/json
+
+{
+  "name": "new name"
+}

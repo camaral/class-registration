@@ -1,0 +1,2 @@
+# curl -i http://localhost:8080/students/1
+GET http://localhost:8080/students/1
