@@ -2,8 +2,12 @@ version: "3.9"
 services:
   class-registration:
     build: .
+    depends_on:
+      - mysql
     ports:
       - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/class-registration
 
   mysql:
     image: mysql:8.0.29
