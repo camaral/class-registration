@@ -1,22 +1,7 @@
 # Class Registration
 
 I usually would write backend APIs using RestContollers, Services and Repositories, documenting the endpoints with
-OpenAPI. But I've been planning to try Spring Data REST for some time, and I thought this Take Home Assignment would be
-a good opportunity to do it.
-
-## Improvements
-
-I unfortunally cannot spend too much time in this take home assignement, so I left some things to be done.
-
-- Block concurrent updates of courses, to avoid course having more than 50 students. I think this may be possible using
-  optimist locking; if not, then a trigger checking the size may be required.
-- Increase test coverage. I didn't create any unit tests because I wrote almost no code(just configs). In this case I
-  would need to write e2e test, using TestContainers.
-- Add pagination. Some pagination is already done, but not all. It should be straight forward to do it with Spring Data
-  REST.
-- View all relationships between students and courses requires navigating the responses. An improvement would be to
-  create [projections](https://docs.spring.io/spring-data/rest/docs/3.7.x/reference/html/#projections-excerpts.projections)
-  .
+OpenAPI. But I've been planning to try Spring Data REST for some time, and used some spare time to do it.
 
 ## Building and running the application
 
